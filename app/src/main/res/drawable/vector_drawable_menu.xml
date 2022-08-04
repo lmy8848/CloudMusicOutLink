@@ -1,0 +1,14 @@
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:vector_drawable_menu.xml
+  ~ Date:2022/07/23 21:49:23
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="48dp"
+    android:height="48dp" android:viewportWidth="1024" android:viewportHeight="1024">
+    <path
+        android:pathData="M320,960v-128h640v128L320,960zM320,448h640v128L320,576v-128zM320,64h640v128L320,192L320,64zM64,832h128v128L64,960v-128zM64,448h128v128L64,576v-128zM64,64h128v128L64,192L64,64z"
+        android:fillColor="#F44336" />
+</vector>

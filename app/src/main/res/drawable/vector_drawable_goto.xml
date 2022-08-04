@@ -1,0 +1,14 @@
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:vector_drawable_goto.xml
+  ~ Date:2022/07/27 12:47:27
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="32dp"
+    android:height="32dp" android:viewportWidth="1024" android:viewportHeight="1024">
+    <path
+        android:pathData="M703.59,511.57 L383.76,831.36 383.76,639.74 511.93,511.4 383.76,383.79 383.76,191.71Z"
+        android:fillColor="#8a8a8a" />
+</vector>

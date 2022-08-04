@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:activity_player.xml
+  ~ Date:2022/07/28 11:18:28
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.PlayerActivity">
+<Toolbar
+    android:layout_gravity="top"
+    android:title="播放器"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/back_home"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/vector_drawable_icon_backward"
+        android:layout_height="wrap_content"/>
+</Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/music_title"
+        android:text="歌曲名称:"
+        android:lines="1"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textColor="#FF9800"
+        android:layout_margin="40dp"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/music_img"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/qj315loading"
+        tools:ignore="ContentDescription,HardcodedText,Suspicious0dp"
+        android:contentDescription="TODO" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:max="10000"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="播放进度"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessLeaf" >
+        <ImageButton
+            android:id="@+id/Previous"
+            android:layout_width="wrap_content"
+            android:background="#009688"
+            android:src="@android:drawable/ic_media_previous"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/music_play"
+            android:layout_width="wrap_content"
+            android:background="#009688"
+            android:src="@android:drawable/ic_media_pause"
+            android:layout_margin="50dp"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/next_music"
+            android:layout_width="wrap_content"
+            android:background="#009688"
+            android:src="@android:drawable/ic_media_next"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</LinearLayout>

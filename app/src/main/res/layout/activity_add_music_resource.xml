@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:activity_add_music_resource.xml
+  ~ Date:2022/08/04 19:30:04
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddMusicResourceActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:layout_gravity="top|start"
+        android:subtitle="@string/app_name"
+        android:title="添加音乐">
+
+        <ImageView
+            android:id="@+id/add_back_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/vector_drawable_icon_backward" />
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="15dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+       <com.google.android.material.textfield.TextInputEditText
+           android:id="@+id/input_url"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_margin="5dp"
+           android:hint="输入网易云歌曲链接"
+           android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/submit_URl"
+            android:layout_width="wrap_content"
+            style="@style/ThemeOverlay.Material3.Button"
+            android:background="#3F51B5"
+            android:shadowRadius="20"
+            android:text="添加音乐"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>

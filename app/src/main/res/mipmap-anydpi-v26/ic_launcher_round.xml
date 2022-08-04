@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:ic_launcher_round.xml
+  ~ Date:2022/07/23 11:52:23
+  -->
+
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>
