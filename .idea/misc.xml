@@ -8,23 +8,30 @@
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_CloudMusicgreen.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_add.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_add_1_.xml" value="0.32916666666666666" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_add_music_icon.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_cloudmusicgreen.xml" value="0.34322916666666664" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_goto.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_icon_backward.xml" value="0.18072916666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_menu.xml" value="0.32916666666666666" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_music.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_music_fill.xml" value="0.32916666666666666" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_study_icon.xml" value="0.32916666666666666" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_tools.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_update.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_update_32_.xml" value="0.32916666666666666" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/drawable/vector_drawable_web_go_back.xml" value="0.32916666666666666" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/activity_add_music_resource.xml" value="0.26902173913043476" />
-        <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/activity_player.xml" value="0.25" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/activity_setting.xml" value="0.25" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/content_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/fragment_first.xml" value="0.22826086956521738" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/fragment_first.xml" value="0.2" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/fragment_second.xml" value="0.22826086956521738" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/fragment_web_site.xml" value="0.2" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/list_item.xml" value="0.33" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/layout/setting_item.xml" value="0.26902173913043476" />
         <entry key="..\:/CloudMusicOutLink/app/src/main/res/menu/menu_main.xml" value="0.30885416666666665" />
+        <entry key="..\:/CloudMusicOutLink/app/src/main/res/menu/navigation_items.xml" value="0.30885416666666665" />
       </map>
     </option>
   </component>

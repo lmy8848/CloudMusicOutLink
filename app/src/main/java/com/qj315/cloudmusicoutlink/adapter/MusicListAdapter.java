@@ -51,6 +51,7 @@ public class MusicListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         view= LayoutInflater.from(context).inflate(R.layout.list_item,null);
+
         MusicList musicList=list.get(i);
         initView(view);
         listId.setText(i+1+"");

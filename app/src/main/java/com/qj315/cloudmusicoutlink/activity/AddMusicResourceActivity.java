@@ -32,7 +32,6 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -75,7 +74,6 @@ public class AddMusicResourceActivity extends AppCompatActivity {
                         public void run() {
                             OkHttpClient client = new OkHttpClient().newBuilder()
                                     .build();
-                            MediaType mediaType = MediaType.parse("application/json");
                             Request request = new Request.Builder()
                                     .url("http://39.105.77.85:8848/api/out_link?url=" + url)
                                     .get()
@@ -92,6 +90,11 @@ public class AddMusicResourceActivity extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
+                                            if (responseBean.getCode() == 200) {
+                                                inputUrl.setText("");
+                                            } else {
+                                                inputUrl.setText(responseBean.getToken());
+                                            }
                                             @SuppressLint("ShowToast") Toast toast = Toast.makeText(AddMusicResourceActivity.this, responseBean.getToken(), Toast.LENGTH_SHORT);
                                             toast.setGravity(Gravity.CENTER, 0, 0);
                                             toast.show();

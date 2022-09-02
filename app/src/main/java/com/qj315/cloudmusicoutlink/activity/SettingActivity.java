@@ -3,10 +3,10 @@
  * github账户:https://github.com/lmy8848
  * User:NJQ-PC
  * File:SettingActivity.java
- * Date:2022/07/27 17:48:27
+ * Date:2022/08/04 19:49:04
  */
 
-package com.qj315.cloudmusicoutlink;
+package com.qj315.cloudmusicoutlink.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +24,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.qj315.cloudmusicoutlink.MainActivity;
+import com.qj315.cloudmusicoutlink.R;
 import com.qj315.cloudmusicoutlink.bean.ListViewItemBean;
 
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public class SettingActivity extends AppCompatActivity {
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SettingActivity.this,MainActivity.class));
+                startActivity(new Intent(SettingActivity.this, MainActivity.class));
                 finish();
             }
         });
@@ -137,6 +139,9 @@ public class SettingActivity extends AppCompatActivity {
                             Toast.makeText(SettingActivity.this, ""+throwable.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }).update();
+                }else if (item.getTitle().equals("添加音乐")){
+                    Intent intent=new Intent(SettingActivity.this, AddMusicResourceActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -148,10 +153,16 @@ public class SettingActivity extends AppCompatActivity {
         goBack=findViewById(R.id.go_back);
     }
     public void addItemObj(){
-        ListViewItemBean listViewItemBean=new ListViewItemBean();
-        listViewItemBean.setDrawable(R.drawable.vector_drawable_update_32_);
-        listViewItemBean.setTitle("检查更新");
-        listViewItemBean.setListIconbtn(R.drawable.vector_drawable_goto);
-        beanList.add(listViewItemBean);
+        ListViewItemBean setting_update=new ListViewItemBean();
+        setting_update.setDrawable(R.drawable.vector_drawable_update_32_);
+        setting_update.setTitle("检查更新");
+        setting_update.setListIconbtn(R.drawable.vector_drawable_goto);
+        beanList.add(setting_update);
+        ListViewItemBean setting_add_music=new ListViewItemBean();
+        setting_add_music.setDrawable(R.drawable.vector_drawable_add_music_icon);
+        setting_add_music.setTitle("添加音乐");
+        setting_add_music.setListIconbtn(R.drawable.vector_drawable_goto);
+        beanList.add(setting_add_music);
+
     }
 }

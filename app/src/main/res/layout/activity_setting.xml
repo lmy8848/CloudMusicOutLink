@@ -13,7 +13,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SettingActivity">
+    tools:context=".activity.SettingActivity">
     <Toolbar
         android:layout_width="match_parent"
         android:title="设置"
@@ -45,6 +45,8 @@
                 android:id="@+id/setting_list"
                 android:layout_width="match_parent"
                 android:tag="设置"
+                android:divider="@null"
+                tools:listitem="@layout/setting_item"
                 android:layout_height="match_parent"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

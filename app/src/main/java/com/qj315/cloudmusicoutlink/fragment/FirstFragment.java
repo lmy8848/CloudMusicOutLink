@@ -3,11 +3,12 @@
  * github账户:https://github.com/lmy8848
  * User:NJQ-PC
  * File:FirstFragment.java
- * Date:2022/07/27 09:46:27
+ * Date:2022/08/31 15:03:31
  */
 
-package com.qj315.cloudmusicoutlink;
+package com.qj315.cloudmusicoutlink.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -16,12 +17,18 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
+import com.qj315.cloudmusicoutlink.MusicList;
+import com.qj315.cloudmusicoutlink.PlayMusicService;
 import com.qj315.cloudmusicoutlink.activity.PlayerActivity;
 import com.qj315.cloudmusicoutlink.adapter.MusicListAdapter;
 import com.qj315.cloudmusicoutlink.databinding.FragmentFirstBinding;
@@ -76,8 +83,7 @@ public class FirstFragment extends Fragment{
 //        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                NavHostFragment.findNavController(FirstFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+//
 //            }
 //        });
 

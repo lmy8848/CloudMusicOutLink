@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>文档博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="vuecss.css">
+  <script src="emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-chat/lib/docsify-chat.min.js"></script>
+
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script> -->
+</head>
+
+<body>
+  <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '<b>MarkDown文档博客</b>',
+      nameLink: '/',
+      subMaxLevel: 3,
+      search: 'auto',
+      coverpage: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      // disqus: 'qj315',//第三方评论功能
+      repo: 'https://github.com/lmy8848',
+      plugins: [
+        // function (hook, vm) {
+        //   hook.beforeEach(function (html) {
+        //     var url =
+        //       'https://github.com/docsifyjs/docsify/blob/master/docs/' +
+        //       vm.route.file;
+        //     var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
+
+        //     return (
+        //       editHtml +
+        //       html +
+        //       '\n----\n' +
+        //       'Last modified {docsify-updated} ' +
+        //       editHtml
+        //     );
+        //   });
+        // }
+      ]
+      , count: {
+        countable: true,
+        fontsize: '0.9em',
+        color: 'rgb(90,90,90)',
+        language: 'chinese'
+      }, chat: {
+        // chat panel title
+        title: '聊天记录',
+        // set avatar url
+        users: [],
+        // message dialog on the right (myself)
+        myself: 'yuki',
+        // animation interval (ms)
+        animation: 50,
+      }
+
+    }
+  </script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '25a100fa9114086bd84e',
+      clientSecret: '299b5ae7178946eb4022838ec0fbc4128602b25c',
+      repo: 'message',
+      owner: 'lmy8848',
+      admin: ['lmy8848'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+  </script>
+
+  <!-- Docsify v4 -->
+  <script src="vue.js"></script>
+  <!-- <script src="disqus.min.js"></script> -->
+  <script src="docsify-copy-code.min.js"></script>
+  <script src="search.min.js"></script>
+  <script src="countable.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="prism-java.min.js"></script>
+  
+
+
+</body>
+
+</html>

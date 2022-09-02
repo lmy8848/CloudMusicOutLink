@@ -1,0 +1,21 @@
+<!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:vector_drawable_add_music_icon.xml
+  ~ Date:2022/09/02 17:44:02
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="36.84375dp"
+    android:height="32dp" android:viewportWidth="1179" android:viewportHeight="1024">
+    <path android:pathData="M553.15,896.2h-55.16V203.96L1179.31,0v802.5h-55.16V74.14L553.15,245.04z"
+        android:fillColor="#169DFA" />
+    <path
+        android:pathData="M425.43,1024a127.91,127.91 0,0 1,-127.76 -127.8,127.91 127.91,0 0,1 127.76,-127.76 127.91,127.91 0,0 1,127.72 127.76,127.91 127.91,0 0,1 -127.72,127.8zM425.43,823.61a72.67,72.67 0,0 0,-72.6 72.6,72.67 72.67,0 0,0 72.6,72.63 72.67,72.67 0,0 0,72.56 -72.63,72.67 72.67,0 0,0 -72.56,-72.6z"
+        android:fillColor="#f4ea2a" />
+    <path
+        android:pathData="M1051.58,931.25a127.87,127.87 0,0 1,-127.76 -127.72,127.87 127.87,0 0,1 127.76,-127.76 127.91,127.91 0,0 1,127.76 127.76,127.91 127.91,0 0,1 -127.76,127.72zM1051.58,730.93a72.67,72.67 0,0 0,-72.6 72.6,72.67 72.67,0 0,0 72.6,72.56 72.71,72.71 0,0 0,72.6 -72.56,72.71 72.71,0 0,0 -72.6,-72.6z"
+        android:fillColor="#F6882D" />
+    <path android:pathData="M0,177.78h384.72v55.16H0z" android:fillColor="#d81e06" />
+    <path android:pathData="M164.76,16.92h55.16v373.13h-55.16z" android:fillColor="#1afa29" />
+</vector>
