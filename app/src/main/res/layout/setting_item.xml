@@ -10,6 +10,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:padding="5dp"
     android:layout_height="wrap_content">
@@ -41,5 +42,19 @@
             android:src="@drawable/vector_drawable_goto"
             android:layout_height="wrap_content"
             tools:ignore="RtlHardcoded" />
+        <com.suke.widget.SwitchButton
+            android:visibility="gone"
+            android:id="@+id/switch_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.suke.widget.SwitchButton>
+        <TextView
+            android:id="@+id/switch_hint"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:text="启用自动检测更新提示"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>

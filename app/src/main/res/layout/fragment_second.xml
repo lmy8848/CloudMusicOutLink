@@ -10,6 +10,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background20211214213608"
     android:layout_height="match_parent"
     tools:context=".fragment.SecondFragment">
     <LinearLayout
@@ -21,12 +22,15 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/phone_number"
         android:hint="手机号"
+        android:textStyle="bold"
+        android:textColor="@color/cpb_red"
+        android:textColorHint="#FFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/start_up"
             android:layout_width="match_parent"
-            android:text="开始发送"
+            android:text="开始发送(测试专用)"
             android:layout_height="wrap_content"/>
         <WebView
             android:id="@+id/web_start"

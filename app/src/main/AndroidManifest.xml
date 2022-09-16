@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (c) 2022. @QJ315
-  ~ github账户:https://github.com/lmy8848
-  ~ User:NJQ-PC
-  ~ File:AndroidManifest.xml
-  ~ Date:2022/07/28 11:21:28
-  -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.qj315.cloudmusicoutlink">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -26,24 +18,28 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/vector_drawable_cloudmusicgreen"
         android:label="@string/app_name"
         android:persistent="true"
+
         android:roundIcon="@drawable/vector_drawable_cloudmusicgreen"
         android:supportsRtl="true"
         android:theme="@style/Theme.CloudMusicOutLink"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".activity.AddMusicResourceActivity"
+            android:name=".activity.JDCookieGet"
             android:launchMode="singleInstance"
             android:exported="false" />
         <activity
+            android:name=".activity.AddMusicResourceActivity"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <activity
             android:name=".activity.SettingActivity"
-            android:launchMode="singleInstance"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleInstance" />
         <activity
             android:name=".activity.PlayerActivity"
             android:exported="false"
@@ -68,16 +64,15 @@
                 <action android:name="com.qj315.cloudmusicoutlink.PlayMusicService" />
             </intent-filter>
         </service>
-
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
             android:label="@string/app_name"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.CloudMusicOutLink.NoActionBar">
+            android:theme="@style/Theme.CloudMusicOutLink.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

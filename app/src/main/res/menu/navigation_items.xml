@@ -16,5 +16,9 @@
     <item android:id="@+id/web_site_test"
         android:title="学习文档"
         android:icon="@drawable/vector_drawable_study_icon" />
+    <item android:id="@+id/socket_send"
+        android:title="socket通信"
+        android:icon="@drawable/vector_drawable_wechat" />
+
 
 </menu>

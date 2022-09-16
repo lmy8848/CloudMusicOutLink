@@ -37,4 +37,8 @@
         android:name="com.qj315.cloudmusicoutlink.fragment.WebSiteFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_web_site"/>
+    <fragment android:id="@+id/socket_send"
+        android:name="com.qj315.cloudmusicoutlink.fragment.Chat315Fragment"
+        android:label="通信"
+        tools:layout="@layout/fragment_chat315"/>
 </navigation>

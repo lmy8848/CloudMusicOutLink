@@ -8,7 +8,9 @@
 
 package com.qj315.cloudmusicoutlink;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +24,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.qj315.cloudmusicoutlink.activity.SettingActivity;
 import com.qj315.cloudmusicoutlink.databinding.ActivityMainBinding;
+import com.qj315.cloudmusicoutlink.tools.ToolsSet;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         BottomNavigationView navView = binding.bottomItem;
-
+        SharedPreferences sharedPreferences=getSharedPreferences("switch", Activity.MODE_PRIVATE);
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homes, R.id.tools_set,R.id.web_site_test)
+                R.id.homes, R.id.tools_set,R.id.web_site_test,R.id.socket_send)
                 .build();
 //        try {
 //            Process ls = Runtime.getRuntime().exec("ls");
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupWithNavController(navView, navController);
         navView.setItemIconTintList(null);
+        if (sharedPreferences.getBoolean("swdata",true)){
+        runOnUiThread(()-> ToolsSet.ShowDownLoad(MainActivity.this));
+        }
     }
 
     @Override
@@ -78,5 +84,11 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ToolsSet.addHistory();
     }
 }

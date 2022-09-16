@@ -55,6 +55,8 @@ public class SecondFragment extends Fragment {
                         Toast.makeText(getContext(), phone.equals("") ? "输入不能为空！" : "电话号码不正确！", Toast.LENGTH_SHORT).show();
                     }
                 }else {
+                    flag=false;
+                    binding.startUp.setText("开始");
                     binding.webStart.destroy();
                 }
             }

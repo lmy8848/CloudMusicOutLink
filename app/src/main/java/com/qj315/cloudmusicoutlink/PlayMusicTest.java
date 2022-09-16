@@ -11,5 +11,5 @@ package com.qj315.cloudmusicoutlink;
 
 public interface PlayMusicTest {
     void playMusic(int CurrentPosition);
-    void setPosition(int Position);
+    void setPosition(String Position);
 }

@@ -175,12 +175,14 @@ public class PlayMusicService extends Service {
             ready(musicLists.get(++P).getMusic_url());
             play();
             Log.i("TAG", "NextPlay: " + P);
+            playMusicTest.setPosition(musicLists.get(P).getMusic_name());
             return musicLists.get(P);
         } else {
             P = 0;
             ready(musicLists.get(P).getMusic_url());
             play();
             Log.i("TAG", "NextPlay: " + P);
+            playMusicTest.setPosition(musicLists.get(P).getMusic_name());
             return musicLists.get(P);
         }
     }

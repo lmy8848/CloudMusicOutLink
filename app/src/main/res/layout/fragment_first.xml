@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2022. @QJ315
   ~ github账户:https://github.com/lmy8848
   ~ User:NJQ-PC
@@ -10,33 +9,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.FirstFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/update_list"
-        android:layout_width="match_parent"
-        android:text="刷新列表"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_height="wrap_content"/>
-    <ListView
-        android:id="@+id/music_list"
-        android:divider="@null"
-        android:layout_weight="1"
-        android:background="#97E2EB"
-        android:backgroundTintMode="screen"
-        android:theme="@style/TextAppearance.AppCompat"
-        android:layout_width="match_parent"
-        style="@style/Base.CardView"
-        android:layout_height="0dp">
-    </ListView>
+        android:orientation="vertical">
+
+        <com.yalantis.phoenix.PullToRefreshView
+            android:id="@+id/pull_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:id="@+id/music_list"
+                style="@style/Base.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#97E2EB"
+                android:backgroundTintMode="screen"
+                android:divider="@null"
+                android:theme="@style/TextAppearance.AppCompat" />
+        </com.yalantis.phoenix.PullToRefreshView>
     </LinearLayout>
 
 </LinearLayout>

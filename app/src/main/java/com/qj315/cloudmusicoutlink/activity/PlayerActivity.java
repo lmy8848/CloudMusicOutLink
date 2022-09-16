@@ -115,6 +115,7 @@ public class PlayerActivity extends AppCompatActivity implements PlayMusicTest {
             public void onClick(View view) {
                 MusicList musicList = binder.getService().PreviousPlay();
                 musicTitle.setText("歌曲名称" + musicList.getMusic_name());
+                playbtn.setImageResource(android.R.drawable.ic_media_pause);
             }
         });
         nextbtn.setOnClickListener(new View.OnClickListener() {
@@ -156,9 +157,10 @@ public class PlayerActivity extends AppCompatActivity implements PlayMusicTest {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void setPosition(int Position) {
-
+    public void setPosition(String Position) {
+        musicTitle.setText("歌曲名称" + Position);
     }
 
     public void initView() {

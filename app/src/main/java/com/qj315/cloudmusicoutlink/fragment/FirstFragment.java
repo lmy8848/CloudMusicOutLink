@@ -29,9 +29,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.qj315.cloudmusicoutlink.MusicList;
 import com.qj315.cloudmusicoutlink.PlayMusicService;
+import com.qj315.cloudmusicoutlink.R;
 import com.qj315.cloudmusicoutlink.activity.PlayerActivity;
 import com.qj315.cloudmusicoutlink.adapter.MusicListAdapter;
 import com.qj315.cloudmusicoutlink.databinding.FragmentFirstBinding;
+import com.yalantis.phoenix.PullToRefreshView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.IOException;
@@ -107,10 +110,16 @@ public class FirstFragment extends Fragment{
                 Log.i("TAG", "onItemClick: "+item.getId());
             }
         });
-        binding.updateList.setOnClickListener(new View.OnClickListener() {
+        binding.pullToRefresh.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
-            public void onClick(View view) {
-                reFresh();
+            public void onRefresh() {
+               binding.pullToRefresh.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        reFresh();
+                        binding.pullToRefresh.setRefreshing(false);
+                    }
+                }, 1500);
             }
         });
     }

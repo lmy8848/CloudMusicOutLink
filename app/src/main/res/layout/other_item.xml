@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022. @QJ315
+  ~ github账户:https://github.com/lmy8848
+  ~ User:NJQ-PC
+  ~ File:other_item.xml
+  ~ Date:2022/09/14 20:49:14
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:contentPadding="8dp"
+        android:background="#00BCD4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/avg_img"
+            android:src="@drawable/esetnod32"
+            android:layout_height="60dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/message_text"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:text="这是一条消息"
+                android:textIsSelectable="true"
+                android:background="@drawable/rads"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                tools:ignore="NestedWeights,Suspicious0dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/message_hint"
+                    android:gravity="center"
+                    android:textSize="10sp"
+                    android:layout_gravity="center"
+                    android:text="来自服务器转发的Message"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

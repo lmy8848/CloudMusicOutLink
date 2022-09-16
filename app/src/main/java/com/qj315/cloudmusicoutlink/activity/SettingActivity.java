@@ -12,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,7 @@ import android.widget.Toast;
 import com.qj315.cloudmusicoutlink.MainActivity;
 import com.qj315.cloudmusicoutlink.R;
 import com.qj315.cloudmusicoutlink.bean.ListViewItemBean;
+import com.suke.widget.SwitchButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +47,7 @@ public class SettingActivity extends AppCompatActivity {
     private ListView settingList;
     private ImageView goBack;
     private List<ListViewItemBean> beanList;
+    private SharedPreferences sp;
     @SuppressLint("InflateParams")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class SettingActivity extends AppCompatActivity {
         UpdateAppUtils.init(this);
         beanList=new ArrayList<>();
         addItemObj();
+        sp=getSharedPreferences("switch", Activity.MODE_PRIVATE);
 
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +68,8 @@ public class SettingActivity extends AppCompatActivity {
         });
         settingList.setAdapter(new BaseAdapter() {
             ImageView updateIcon,gotoIcon;
-            TextView title;
+            SwitchButton switchButton;
+            TextView title,switch_hint;
             @Override
             public int getCount() {
                 return beanList.size();
@@ -82,16 +89,31 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public View getView(int i, View view, ViewGroup viewGroup) {
                 view=LayoutInflater.from(SettingActivity.this).inflate(R.layout.setting_item,null);
-                initview(view);
+                interview(view);
                 updateIcon.setImageResource(beanList.get(i).getDrawable());
                 gotoIcon.setImageResource(beanList.get(i).getListIconbtn());
                 title.setText(beanList.get(i).getTitle());
+                if (beanList.get(i).getTitle().equals("检查更新")){
+                    switchButton.setVisibility(View.VISIBLE);
+                    switch_hint.setVisibility(View.VISIBLE);
+                    switchButton.setChecked(sp.getBoolean("swdata",true));
+                }
+                switchButton.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                        SharedPreferences.Editor edit =sp.edit();
+                        edit.putBoolean("swdata",isChecked);
+                        edit.apply();
+                    }
+                });
                 return view;
             }
-            public void initview(View view){
+            public void interview(View view){
                 updateIcon=view.findViewById(R.id.setting_img);
                 gotoIcon=view.findViewById(R.id.setting_btn);
                 title=view.findViewById(R.id.setting_title);
+                switch_hint=view.findViewById(R.id.switch_hint);
+                switchButton=view.findViewById(R.id.switch_button);
             }
         });
         settingList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -100,17 +122,20 @@ public class SettingActivity extends AppCompatActivity {
                 ListViewItemBean item = (ListViewItemBean) adapterView.getAdapter().getItem(i);
                 if (item.getTitle().equals("检查更新")){
                     UpdateConfig updateConfig = new UpdateConfig();
+                    updateConfig.setNotifyImgRes(R.drawable.vector_drawable_cloudmusicgreen);
+//                    updateConfig.getServerVersionCode()
+
+                    updateConfig.setThisTimeShow(true);
                     updateConfig.setCheckWifi(true);
                     updateConfig.setNeedCheckMd5(false);
                     updateConfig.setAlwaysShowDownLoadDialog(true);
-                    updateConfig.setNotifyImgRes(R.drawable.vector_drawable_cloudmusicgreen);
                     UiConfig uiConfig = new UiConfig();
                     uiConfig.setUiType(UiType.PLENTIFUL);
                     UpdateAppUtils
                             .getInstance()
                             .apkUrl("http://110.42.174.137/app/app-release.apk")
                             .updateTitle("发现新版本")
-                            .updateContent("UI更新,以及新的功能,期待您的探索与反馈！")
+                            .updateContent("UI更新,以及新的下拉刷新功能,期待您的探索与反馈！")
                             .uiConfig(uiConfig)
                             .updateConfig(updateConfig).setMd5CheckResultListener(new Md5CheckResultListener() {
                         @Override
@@ -120,7 +145,9 @@ public class SettingActivity extends AppCompatActivity {
                     }).setUpdateDownloadListener(new UpdateDownloadListener() {
                         @Override
                         public void onStart() {
-
+                            Toast.makeText(SettingActivity.this,"开始下载",Toast.LENGTH_SHORT).show();
+                            Log.i("TAG", "onItemClick: "+updateConfig.getServerVersionCode());
+                            Log.i("TAG", "onStart:Download ");
                         }
 
                         @Override
@@ -130,7 +157,7 @@ public class SettingActivity extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
-
+                            Toast.makeText(SettingActivity.this,"下载完成",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -141,6 +168,9 @@ public class SettingActivity extends AppCompatActivity {
                     }).update();
                 }else if (item.getTitle().equals("添加音乐")){
                     Intent intent=new Intent(SettingActivity.this, AddMusicResourceActivity.class);
+                    startActivity(intent);
+                }else if (item.getTitle().equals("京东Cookie获取")){
+                    Intent intent=new Intent(SettingActivity.this, JDCookieGet.class);
                     startActivity(intent);
                 }
             }
@@ -163,6 +193,11 @@ public class SettingActivity extends AppCompatActivity {
         setting_add_music.setTitle("添加音乐");
         setting_add_music.setListIconbtn(R.drawable.vector_drawable_goto);
         beanList.add(setting_add_music);
+        ListViewItemBean setting_add_JD=new ListViewItemBean();
+        setting_add_JD.setDrawable(R.drawable.vector_drawable_jdicon_01);
+        setting_add_JD.setTitle("京东Cookie获取");
+        setting_add_JD.setListIconbtn(R.drawable.vector_drawable_goto);
+        beanList.add(setting_add_JD);
 
     }
 }
